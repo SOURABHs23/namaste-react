@@ -1,0 +1,29 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000n\u0000a\u0000m\u0000a\u0000s\u0000t\u0000e\u0000-\u0000r\u0000e\u0000a\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SOURABHs23/namaste-react.git"
+  },
+  "keywords": [
+    "namste",
+    "react",
+    "sourabh",
+    "great",
+    "developer"
+  ],
+  "author": "sourabh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SOURABHs23/namaste-react/issues"
+  },
+  "homepage": "https://github.com/SOURABHs23/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
