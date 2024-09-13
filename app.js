@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const root = document.getElementById("root");
 // const h1 = document.createElement("h1");
 // h1.textContent = "hello js";
