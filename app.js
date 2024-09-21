@@ -2,29 +2,36 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 const root = document.getElementById("root");
-// const h1 = document.createElement("h1");
-// h1.textContent = "hello js";
-// root.append(h1);
 
-{
-  /* <div id="parent">
-  <div id="child">
-    <h1>this is h1</h1>
-  </div>
-</div>; */
-}
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-const heading = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "this is h1 tag "),
-    React.createElement("h1", {}, "this is h1 tag "),
-  ])
-);
-
-console.log(heading);
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+    </div>
+  );
+};
 
 const app = ReactDOM.createRoot(root);
 
-app.render(heading);
+app.render(<AppLayout />);

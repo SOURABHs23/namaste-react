@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "��#\u0000 \u0000n\u0000a\u0000m\u0000a\u0000s\u0000t\u0000e\u0000-\u0000r\u0000e\u0000a\u0000c\u0000t\u0000\r\u0000 \u0000",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
