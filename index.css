@@ -46,3 +46,31 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.shimer-component {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimer-card {
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
+  margin: 20px;
+}
+
+.filter-btn {
+  /* padding: 10px; */
+  cursor: pointer;
+  /* margin: 10px; */
+}
+
+.filter {
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+}
+
+/* .search {
+  background-color: brown;
+} */
