@@ -2,12 +2,17 @@
 import RestaurantCard from "./RestaruantCard";
 import { useState, useEffect } from "react";
 import Shimer from "./Shimer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
-  const [filterRestaurants, setfilterRestaurants] = useState([]);
+  // const [filterRestaurants, setfilterRestaurants] = useState([]);
+  
   const [searchVal, setsearchVal] = useState("");
 
+  const isOnline = useOnlineStatus();
+  console.log("in body");
   useEffect(() => {
     fetchData();
     console.log("dd");
@@ -15,19 +20,22 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
     setlistOfRestaurants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setfilterRestaurants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
   // console.log(listOfRestaurants);
+
+  if (!isOnline) return <h1>you are offline</h1>;
 
   return listOfRestaurants.length == 0 ? (
     <Shimer />
@@ -68,7 +76,12 @@ const Body = () => {
       <div className="res-container">
         {filterRestaurants.map((restaruant) => {
           return (
-            <RestaurantCard key={restaruant.info.id} resData={restaruant} />
+            <Link
+              key={restaruant.info.id}
+              to={"/restaruants/" + restaruant.info.id}
+            >
+              <RestaurantCard resData={restaruant} />
+            </Link>
           );
         })}
       </div>
@@ -77,3 +90,5 @@ const Body = () => {
 };
 
 export default Body;
+
+

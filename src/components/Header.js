@@ -1,8 +1,16 @@
+import { Link } from "react-router-dom";
 import { LOGO_LINK } from "../utils/constant";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [btnName, setbtnName] = useState("Login");
+
+  useEffect(() => {
+    // console.log("inside useeffect");
+  }, []);
+
+  // console.log("inside header");
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -10,8 +18,13 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
+          <li>
+            <Link to="/"> Home</Link>
+            {/* <a href="/">Home</a> */}
+          </li>
+          <li>
+            <Link to="/about"> About </Link>
+          </li>
           <li>Contact Us</li>
           <li>Cart</li>
           <button
